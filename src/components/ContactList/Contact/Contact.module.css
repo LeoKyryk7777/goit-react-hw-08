@@ -1,0 +1,45 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: white;
+
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.info {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.name,
+.phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.icon {
+  font-size: 18px;
+}
+
+.deleteButton {
+  background-color: #f0f0f0;
+  border: 1px solid gray;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  background-color: #e0e0e0;
+}
