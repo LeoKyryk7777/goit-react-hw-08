@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import Contact from "./Contact/Contact";
-import css from "./ContactList.module.css";
 import {
   selectError,
   selectFilteredContacts,
@@ -13,13 +12,15 @@ export default function ContactList() {
   const loading = useSelector(selectLoading);
 
   return (
-    <div className={css.contactsList}>
+    <div className="px-4 mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
       {contacts.map((contact) => (
-        <div className={css.contactItem} key={contact.id}>
+        <div key={contact.id}>
           <Contact data={contact} />
         </div>
       ))}
-      {loading && <h2>Loading...</h2>}
+      {loading && (
+        <span className="loading loading-dots loading-xl  text-pink-600 ab  bottom-1 "></span>
+      )}
       {error && <h2>server is dead...</h2>}
     </div>
   );
