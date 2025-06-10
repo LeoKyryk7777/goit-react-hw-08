@@ -1,5 +1,5 @@
 import { FaUser, FaPhone } from "react-icons/fa";
-import { deleteContactThunk } from "../../../redux/contactsOps";
+import { deleteContactThunk } from "../../../redux/contacts/operations";
 import { useDispatch } from "react-redux";
 
 export default function Contact({ data }) {

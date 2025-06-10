@@ -4,7 +4,7 @@ import { useId } from "react";
 import { nanoid } from "nanoid";
 
 import { useDispatch } from "react-redux";
-import { addContactThunk } from "../../redux/contactsOps";
+import { addContactThunk } from "../../redux/contacts/operations";
 
 export default function ContactForm() {
   const dispatch = useDispatch();
