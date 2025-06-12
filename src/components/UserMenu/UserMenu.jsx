@@ -12,7 +12,7 @@ const setActiveClass = ({ isActive }) => {
   );
 };
 
-const Header = () => {
+const UserMenu = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -34,7 +34,7 @@ const Header = () => {
           <NavLink className={setActiveClass} to="/contacts">
             Contacts
           </NavLink>
-          {!isLoggedIn && (
+          {/* {!isLoggedIn && (
             <>
               <NavLink className={setActiveClass} to="/login">
                 Login
@@ -43,7 +43,7 @@ const Header = () => {
                 Register
               </NavLink>
             </>
-          )}
+          )} */}
           {isLoggedIn && (
             <button
               onClick={() => dispatch(logoutThunk())}
@@ -57,4 +57,4 @@ const Header = () => {
     </header>
   );
 };
-export default Header;
+export default UserMenu;

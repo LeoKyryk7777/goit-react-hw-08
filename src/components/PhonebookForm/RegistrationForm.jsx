@@ -2,9 +2,18 @@ import { Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { registerThunk } from "../../redux/auth/operations";
+import * as Yup from "yup";
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
+
+  const validationSchema = Yup.object({
+    name: Yup.string().min(3, "Min 3 symbols").required("Name required"),
+    email: Yup.string().email("Invalid email").required("Email required"),
+    password: Yup.string()
+      .min(7, "Min 7 symbols")
+      .required("Password required"),
+  });
   const initialValues = {
     name: "",
     email: "",
@@ -22,7 +31,11 @@ const RegisterForm = () => {
         </div>
         <div className="card bg-base-100 w-full shadow-2xl">
           <div className="card-body">
-            <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+            <Formik
+              initialValues={initialValues}
+              validationSchema={validationSchema}
+              onSubmit={handleSubmit}
+            >
               <Form>
                 <fieldset className="fieldset">
                   <label className="label">Name</label>
